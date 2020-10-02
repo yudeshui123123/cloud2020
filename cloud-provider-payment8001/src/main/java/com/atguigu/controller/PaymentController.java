@@ -30,7 +30,7 @@ public class PaymentController {
             log.info("插入:"+payment);
             return new CommonResult(200,"新增成功",byPayment);
         }
-        return new CommonResult(400,"新增失败");
+        return new CommonResult(400,"新增失败",null);
     }
 
     @GetMapping("/getPayment/{id}")
