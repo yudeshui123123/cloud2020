@@ -1,7 +1,7 @@
 package com.atguigu.controller;
 
-import com.atguigu.entity.CommonResult;
-import com.atguigu.entity.Payment;
+import com.atguigu.cloudapicommons.entity.CommonResult;
+import com.atguigu.cloudapicommons.entity.Payment;
 import com.atguigu.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping(value = "/create")
-    public CommonResult createPayment(Payment payment){
+    public CommonResult createPayment(@RequestBody Payment payment){
         Integer byPayment = paymentService.createByPayment(payment);
         if(byPayment > 0){
             log.info("插入:"+payment);

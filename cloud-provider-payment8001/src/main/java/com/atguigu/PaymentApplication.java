@@ -3,6 +3,7 @@ package com.atguigu;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * TODO
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description:
  */
 @SpringBootApplication
+@EnableEurekaClient
 @MapperScan(basePackages = {"com.atguigu.mapper"})
 public class PaymentApplication {
     public static void main(String[] args) {

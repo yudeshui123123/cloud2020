@@ -1,4 +1,4 @@
-package com.atguigu.entity;
+package com.atguigu.cloudapicommons.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

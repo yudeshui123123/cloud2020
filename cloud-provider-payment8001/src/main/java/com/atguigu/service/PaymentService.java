@@ -1,6 +1,7 @@
 package com.atguigu.service;
 
-import com.atguigu.entity.Payment;
+
+import com.atguigu.cloudapicommons.entity.Payment;
 
 /**
  * TODO

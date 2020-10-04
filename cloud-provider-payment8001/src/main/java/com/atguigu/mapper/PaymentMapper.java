@@ -1,6 +1,6 @@
 package com.atguigu.mapper;
 
-import com.atguigu.entity.Payment;
+import com.atguigu.cloudapicommons.entity.Payment;
 import org.springframework.stereotype.Repository;
 
 /**
