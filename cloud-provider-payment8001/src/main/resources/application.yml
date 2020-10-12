@@ -19,8 +19,14 @@ mybatis:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
     #注册到eureka中  默认为ture
     register-with-eureka: true
     #是否从eurekaServer中抓取信息，单点无所谓，集群必须为true才能配合ribbon使用负载均衡，默认为true
     fetch-registry: true
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+    #lease-renewal-interval-in-seconds: 1
+    #lease-expiration-duration-in-seconds: 2
