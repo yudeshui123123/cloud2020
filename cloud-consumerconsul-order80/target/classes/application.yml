@@ -1,0 +1,18 @@
+
+server:
+  # consul\u670D\u52A1\u7AEF\u53E3
+  port: 8081
+spring:
+  application:
+    name: cloud-consumer-payment
+  cloud:
+    consul:
+      # consul\u6CE8\u518C\u4E2D\u5FC3\u5730\u5740
+      host: 192.168.17.131
+      port: 8500
+      discovery:
+        #\u914D\u7F6ESpringboot\u670D\u52A1\u7684\u5730\u5740  \u9ED8\u8BA4\u662F\u672C\u673A
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+        heartbeat:
+          enabled: true
