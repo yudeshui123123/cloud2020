@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * @version 1.0
  * @date 2020/10/13 10:49
  * @description:
+ * 更改成随机机制
  */
 @Configuration
 public class MySelfRole {

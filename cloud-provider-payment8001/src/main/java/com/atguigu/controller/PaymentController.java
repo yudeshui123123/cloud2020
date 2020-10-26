@@ -72,4 +72,14 @@ public class PaymentController {
         return serverPort;
     }
 
+    @GetMapping("/timeOut")
+    public String timeOut(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "服务返回用时3s";
+    }
+
 }

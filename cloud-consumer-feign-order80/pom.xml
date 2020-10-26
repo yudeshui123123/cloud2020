@@ -10,10 +10,6 @@
 
     <artifactId>cloud-consumer-feign-order80</artifactId>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <!--openfeign-->
         <dependency>
@@ -23,7 +19,7 @@
         <!--eureka client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
             <groupId>com.atguigu</groupId>
