@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      label: master #分支名称
+      name: config #配置文件名称
+      profile: dev #配置文件后缀
+      uri: http://127.0.0.1:3344
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +23,12 @@ import java.util.List;
  */
 @RequestMapping("/payment")
 @RestController
+@RefreshScope
 @Slf4j
 public class PaymentController {
+
+    @Value("${config.info}")
+    private String configInfo;
 
     @Autowired
     private PaymentService paymentService;
@@ -82,4 +87,8 @@ public class PaymentController {
         return "服务返回用时3s";
     }
 
+    @GetMapping("/configInfo")
+    public String getConfigInfo(){
+        return configInfo+"    :  "+serverPort;
+    }
 }

@@ -23,6 +23,12 @@ spring:
             #- Between=2020-10-26T14:34:52.576+08:00[Asia/Shanghai],2020-10-26T14:39:52.576+08:00[Asia/Shanghai]
             - Cookie=username,yds #key value形式，value写正则表达式
             - Header=X-Request-Id,\d+ #请求头要有X-Request-Id属性并且值为整数的正则表达式
+
+        - id: payment_routh3
+          #uri: http://127.0.0.1:8001
+          uri: lb://cloud-payment-service #匹配后提供服务的路由地址 lb负载均衡的意思
+          predicates:
+            - Path=/payment/**
       discovery:
         locator:
           enabled: true #开启从注册中心动态创建路由的功能，利用微服务名进行路由
