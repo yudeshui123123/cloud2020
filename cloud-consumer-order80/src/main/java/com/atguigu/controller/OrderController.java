@@ -3,6 +3,7 @@ package com.atguigu.controller;
 import com.atguigu.cloudapicommons.entity.CommonResult;
 import com.atguigu.cloudapicommons.entity.Payment;
 import com.atguigu.lb.LoadBalanced;
+import com.atguigu.service.feign.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -31,6 +32,9 @@ public class OrderController {
 
     //public static final String PAYMENT_URL = "http://127.0.0.1:8001";
     public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
+
+    @Autowired
+    private PaymentService paymentService;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -66,5 +70,10 @@ public class OrderController {
         }
         ServiceInstance instance = loadBalanced.instance(list);
         return restTemplate.getForObject(instance.getUri()+"/payment/lb",String.class);
+    }
+
+    @GetMapping("/configInfo")
+    public String getConfigInfo(){
+        return paymentService.getConfigInfo();
     }
 }

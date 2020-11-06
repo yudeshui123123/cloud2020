@@ -11,6 +11,12 @@ spring:
           search-paths:
             - springcloud-config
       label: master
+  #下面这个配置不能放在git上
+  rabbitmq:
+    host: 192.168.17.131
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
@@ -22,14 +28,8 @@ eureka:
     instance-id: cloud-config
     prefer-ip-address: true
 
-rabbitmq:
-  host: 192.168.17.131
-  port: 5672
-  username: guest
-  password: guest
-
 management:
-  endpoints:
+  endpoints: #暴露bus刷新配置的端点
     web:
       exposure:
         include: "bus-refresh"

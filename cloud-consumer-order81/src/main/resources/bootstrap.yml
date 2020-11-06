@@ -1,0 +1,18 @@
+
+spring:
+  cloud:
+    config:
+      label: master #分支名称
+      name: config #配置文件名称
+      profile: devinput #配置文件后缀
+      uri: http://127.0.0.1:3344
+    stream:
+      bindings:
+        input:
+          group: atguigu
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

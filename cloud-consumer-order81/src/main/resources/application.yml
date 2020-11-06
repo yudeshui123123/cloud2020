@@ -1,0 +1,20 @@
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: cloud-order-service81
+
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+    #\u6CE8\u518C\u5230eureka\u4E2D  \u9ED8\u8BA4\u4E3Ature
+    register-with-eureka: true
+    #\u662F\u5426\u4ECEeurekaServer\u4E2D\u6293\u53D6\u4FE1\u606F\uFF0C\u5355\u70B9\u65E0\u6240\u8C13\uFF0C\u96C6\u7FA4\u5FC5\u987B\u4E3Atrue\u624D\u80FD\u914D\u5408ribbon\u4F7F\u7528\u8D1F\u8F7D\u5747\u8861\uFF0C\u9ED8\u8BA4\u4E3Atrue
+    fetch-registry: true
+  instance:
+    instance-id: cloud-order-service81
+    prefer-ip-address: true
